@@ -1,13 +1,13 @@
 #Imagen base
 FROM debian
 
-LABEL org.opencontainers.image.authors="miguelmira.informatica@iespacomolla.es"
+LABEL org.opencontainers.image.authors="m.miraflor@edu.gva.es"
 
 #Actualizaciones + instalación de VIM + instalación del servidor web NGINX + PHP
 RUN apt update && \
     apt install -y vim && \
     apt install -y nginx && \
-    apt install -y php8.2-fpm && \
+    apt install -y php-fpm && \
     apt install -y php-yaml && \
     apt install -y php-mysql
 
