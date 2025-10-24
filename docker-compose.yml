@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile.front
     volumes:
       - ./app/frontend:/var/www/html/frontend
-      - ./config/virtualhosts/peliculas.com:/etc/nginx/sites-enabled/peliculas.com
+      - ./config/virtualhosts/peliculas.iaas.com.conf:/etc/apache2/sites-enabled/peliculas.iaas.com.conf
     ports:
       - "80:80"
   backend:
@@ -15,7 +15,7 @@ services:
       dockerfile: Dockerfile.back
     volumes:
       - ./app/backend:/var/www/html/backend
-      - ./config/virtualhosts/peliculas.api.com:/etc/nginx/sites-enabled/peliculas.api.com
+      - ./config/virtualhosts/peliculas.iaas.api.com.conf:/etc/apache2/sites-enabled/peliculas.iaas.api.com.conf
     ports:
       - "8080:80"
     links:

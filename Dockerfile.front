@@ -3,13 +3,15 @@ FROM debian
 
 LABEL org.opencontainers.image.authors="m.miraflor@edu.gva.es"
 
-#Actualizaciones + instalación de VIM + instalación del servidor web NGINX + PHP
+#Actualizaciones + instalación de VIM + instalación del servidor web apache + PHP
 RUN apt update && \
-    apt install -y vim && \
-    apt install -y nginx
+    apt install -y apache2
+
+#Habilitar las redirecciones
+RUN a2enmod rewrite
 
 #Expongo el puerto de NGINX
 EXPOSE 80
 
-#Habilito nginx para que arranque cada vez que el contenedor se inicie
-ENTRYPOINT ["/bin/bash", "-c", "nginx -g 'daemon off;'"]
+#Habilito apache para arranque cada vez que el contenedor se inicie
+ENTRYPOINT ["apachectl", "-D", "FOREGROUND"]
