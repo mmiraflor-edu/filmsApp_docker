@@ -10,3 +10,7 @@ Recuerda añadir al archivo `hosts` los dominios del frontend y backend:
 <ip_maquina_anfitrión> peliculas.iaas.com
 <ip_maquina_anfitrión> peliculas.iaas.api.com
 ```
+# Eliminar la infraestructura por completo
+```bash
+docker compose down --rmi all -v
+```
