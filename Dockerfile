@@ -3,7 +3,6 @@ FROM debian
 
 LABEL org.opencontainers.image.authors="m.miraflor@edu.gva.es"
 
-#Actualizaciones + instalación de VIM + instalación del servidor web NGINX + PHP
 #Actualizaciones + instalación de VIM + instalación del servidor web apache + PHP
 RUN apt update && \
     apt install -y apache2 && \
